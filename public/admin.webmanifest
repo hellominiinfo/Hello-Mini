@@ -1,0 +1,15 @@
+{
+  "name": "Sitraya Admin",
+  "short_name": "Sitraya Admin",
+  "description": "Orders, products and notifications for the Sitraya shop",
+  "start_url": "/admin",
+  "scope": "/admin",
+  "display": "standalone",
+  "background_color": "#0D2B26",
+  "theme_color": "#0D2B26",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
