@@ -1,0 +1,64 @@
+<div id="admin" hidden>
+  <div class="a-login" id="aLogin">
+    <div class="lg-scene" aria-hidden="true">
+      <span class="lg-blob b1"></span><span class="lg-blob b2"></span><span class="lg-blob b3"></span>
+      <span class="lg-floor"></span>
+      <span class="lg-ring r1"></span><span class="lg-ring r2"></span><span class="lg-ring r3"></span>
+      <div class="lg-dots" id="lgDots"></div>
+      <div class="lg-fig f1" style="--k:22"><span class="floaty" style="--d:7s"><img data-alimg="b2" alt=""></span></div>
+      <div class="lg-fig f2" style="--k:34"><span class="floaty" style="--d:6s;--dl:.8s"><img data-alimg="n1" alt=""></span></div>
+      <div class="lg-fig f3" style="--k:12"><span class="floaty" style="--d:8s;--dl:1.4s"><img data-alimg="b4" alt=""></span></div>
+      <div class="lg-fig f4" style="--k:16"><span class="floaty" style="--d:7.5s;--dl:.3s"><img data-alimg="n2" alt=""></span></div>
+    </div>
+    <div class="lg-stage">
+      <div class="lg-wrap">
+        <form class="a-lcard" id="aLoginForm" novalidate data-tilt="5">
+          <span class="lg-glare" aria-hidden="true"></span>
+          <div class="lg-head">
+            <span class="lg-badge"><img class="brandLogo" data-logo="dark" src="" alt=""></span>
+            <h1>Welcome back</h1>
+            <p class="al-sub">অ্যাডমিন প্যানেলে প্রবেশ করুন</p>
+          </div>
+          <label class="lf" for="alEmail"><span>Email</span><span class="lfi"><i data-ic="mail"></i><input id="alEmail" type="email" autocomplete="username" value="owner@sitraya.com"></span></label>
+          <label class="lf" for="alPass"><span>Password</span><span class="lfi"><i data-ic="lock"></i><input id="alPass" type="password" autocomplete="current-password" placeholder="Enter password"><button type="button" class="pwt" data-pwtoggle aria-label="Show password"><i data-ic="eye"></i></button></span></label>
+          <p class="err" id="alMsg" role="alert" hidden></p>
+          <button class="btn b-gold al-go" type="submit" id="alGo"><span class="sp" aria-hidden="true"></span><span class="tx">Sign in</span><i data-ic="arrow"></i></button>
+          <p class="demo-note"><i data-ic="info"></i><span>Demo login: <b>owner@sitraya.com</b> / <b>demo1234</b></span></p>
+          <a class="lk al-back" href="#top">← Back to website</a>
+        </form>
+        <p class="lg-foot"><i data-ic="lock"></i>Secure admin area · নিরাপদ অ্যাডমিন এলাকা</p>
+      </div>
+    </div>
+  </div>
+  <div class="a-shell" id="aShell" hidden>
+    <aside class="a-side" id="aSide" aria-label="Admin menu">
+      <div class="a-brand"><img class="brandLogo" data-logo="light" src="" alt=""><span>Admin</span></div>
+      <nav id="aNav"></nav>
+      <div class="a-sfoot"><a class="ni" href="#top"><span class="nic"><i data-ic="eye"></i></span><span>View website<small>ওয়েবসাইট দেখুন</small></span></a><button class="ni" id="aLogout"><span class="nic"><i data-ic="logout"></i></span><span>Sign out<small>বের হন</small></span></button></div>
+    </aside>
+    <div class="a-main" id="aMain">
+      <header class="a-top">
+        <button class="mini a-burger" id="aBurger" aria-label="Open admin menu"><i data-ic="menu"></i></button>
+        <div class="a-tt"><span class="hello" id="aHello"></span><h1 id="aTitle"></h1><span id="aSub"></span></div>
+        <div class="a-tools">
+          <button class="a-bell" id="aBell" aria-label="Notifications"><i data-ic="bell"></i><i class="cnt" id="aBellN" hidden>0</i></button>
+          <a class="btn b-out sm a-view" href="#top"><i data-ic="eye"></i><span>View website</span></a>
+          <span class="av" title="Owner">O</span>
+        </div>
+      </header>
+      <div class="a-body" id="aBody"></div>
+      <section class="a-body" id="cz" hidden>
+        <p class="note2"><i data-ic="info"></i><span>Changes show on the website straight away. Open “View website” to see them.</span></p>
+        <div class="cztabs" role="tablist" id="czTabs"></div>
+        <div class="czb" id="czBody"></div>
+      </section>
+    </div>
+  </div>
+  <div class="a-scrim" id="aScrim"></div>
+  <aside class="a-drawer" id="aDrawer" aria-hidden="true" role="dialog" aria-labelledby="adT">
+    <span class="ad-grab" aria-hidden="true"></span><div class="dhd"><span class="adi" id="adI" aria-hidden="true"></span><div class="adtt"><span id="adS"></span><h2 id="adT"></h2></div><button class="x" data-adclose aria-label="Close"><i data-ic="x"></i></button></div>
+    <div class="adb" id="adB"></div>
+    <div class="adf" id="adF"></div>
+  </aside>
+  <div class="a-tip" id="aTip" hidden></div>
+</div>

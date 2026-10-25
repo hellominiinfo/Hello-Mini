@@ -1,0 +1,18 @@
+{
+  "name": "sitraya-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitraya online store: website, admin panel, order notifications and Meta (Facebook) integration.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "rebuild": "python3 client-src/gen/build_prod.py client-src . && node scripts/build-server.mjs",
+    "build:server": "node scripts/build-server.mjs",
+    "typecheck": "tsc --noEmit -p .",
+    "dev": "node scripts/dev-server.mjs",
+    "test": "node --import tsx --test tests/*.test.ts"
+  },
+  "devTools": "Only for developers. Install with: npm i --no-save @types/node@^22.18.0 esbuild@^0.28.2 postgres@^3.4.9 typescript@^6.0.3 zod@^3.25.76 tsx@^4.20.0"
+}

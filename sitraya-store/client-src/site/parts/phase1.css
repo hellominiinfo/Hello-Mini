@@ -1,0 +1,83 @@
+/* ================= Phase 1: phones first (checkout, product page, photos, slider, search, admin lists) ================= */
+
+/* --- 1. Checkout on phones: the typed field stays visible while the keyboard is open --- */
+@media (max-width:860px){
+  body:not(.is-admin) #cart{height:var(--vvh,100dvh);max-height:100dvh}
+  body:not(.is-admin) #cart .cf input,body:not(.is-admin) #cart .cf textarea,body:not(.is-admin) #cart .cf select{font-size:16px;min-height:50px;line-height:1.35;padding:12px 14px}
+  body:not(.is-admin) #cart .cf textarea{min-height:84px}
+  body:not(.is-admin) #cart .cf > span:first-child{font-size:14px;line-height:1.4}
+  /* keyboard open: the totals panel shrinks to one line so the form keeps the screen */
+  html.kb body:not(.is-admin) #cart .freebar{display:none}
+  html.kb body:not(.is-admin) #cart .dft{padding:8px 16px calc(8px + env(safe-area-inset-bottom,0px));gap:0}
+  html.kb body:not(.is-admin) #cart .dft > :not(.tot){display:none !important}
+  html.kb body:not(.is-admin) #cart .dft .tot{margin:0;padding:0;border:0;font-size:14px}
+  html.kb body:not(.is-admin) #cart .dhd{padding-block:10px}
+  body:not(.is-admin) #bagBody .cf{scroll-margin:84px 0 96px}
+}
+
+/* --- 2. Product page on phones and tablets: one slim button row, never over the size and colour choices --- */
+@media (max-width:860px){
+  body:not(.is-admin) #pm .mbtns{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 50px 50px;gap:8px;padding-top:8px}
+  body:not(.is-admin) #pm .mbtns .btn{min-height:50px;font-size:14px;padding:0 8px;border-radius:12px}
+  body:not(.is-admin) #pm .mbtns .b-wa,body:not(.is-admin) #pm .mbtns #pmCall{font-size:0;gap:0;padding:0;width:50px}
+  body:not(.is-admin) #pm .mbtns .b-wa .ic,body:not(.is-admin) #pm .mbtns #pmCall .ic{width:22px;height:22px;margin:0}
+  html.no-wa body:not(.is-admin) #pm .mbtns{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 50px}
+  html.no-phone body:not(.is-admin) #pm .mbtns{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 50px}
+  html.no-wa.no-phone body:not(.is-admin) #pm .mbtns{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  body:not(.is-admin) #pm .minfo{padding-bottom:12px}
+  /* short phones: a smaller photo leaves room for colour and size above the buttons */
+  body:not(.is-admin) #pm .mstage{aspect-ratio:auto;height:min(40vh,340px)}
+  body:not(.is-admin) #pm .thumbs img{height:80%}
+  body:not(.is-admin) #pm .opt{scroll-margin-bottom:90px}
+}
+
+/* --- 3. Real product photos are never cropped --- */
+body:not(.is-admin) .mstage.photo{background:var(--photo-bg,#F4F1EC)}
+body:not(.is-admin) .mstage.photo img{object-fit:contain !important;object-position:var(--fpos,50% 50%)}
+body:not(.is-admin) .card .stg img,body:not(.is-admin) .mg-big img{object-position:var(--fpos,50% 50%)}
+
+/* --- 4. Homepage slider on phones and tablets: the whole banner, no empty bands above or below --- */
+@media (max-width:860px){
+  body:not(.is-admin) .htop .slider{height:auto !important;min-height:0 !important;background:transparent;transition:height .35s ease}
+  body:not(.is-admin) .htop .sl.pic[data-fit="fit"]{height:auto !important;aspect-ratio:var(--ar,1600/673);min-height:0;background:var(--bg,#0a0a0a)}
+  body:not(.is-admin) .htop .sl.pic[data-fit="fit"]::before{display:none}
+  body:not(.is-admin) .htop .sl.pic[data-fit="fit"] img.full,
+  body:not(.is-admin) .htop .sl.pic[data-fit="fill"] img.full{object-fit:cover !important;object-position:var(--pos,50% 50%)}
+  body:not(.is-admin) .htop .sl.pic[data-fit="fill"]::before{display:none}
+  body:not(.is-admin) .htop .sl.pic .solo{bottom:10px;right:10px}
+  body:not(.is-admin) .htop .dots{bottom:10px}
+  body:not(.is-admin) .htop .sl.pic picture{display:contents}
+}
+body:not(.is-admin) .sl.pic img.full{object-position:var(--pos,50% 50%)}
+
+/* --- 5. Search: suggestions before the keyboard --- */
+.s-sug{display:flex;flex-direction:column;gap:18px;padding-bottom:12px}
+.s-sug h4{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--muted);display:flex;align-items:center;justify-content:space-between}
+.s-sug h4 button{font:inherit;font-size:12.5px;color:var(--em,#0D2B26);background:none;border:0;padding:6px 4px;cursor:pointer}
+.s-sug .row{display:flex;flex-wrap:wrap;gap:8px}
+.s-sug .row button{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line,#E7E2D8);background:#fff;font:inherit;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.s-sug .row button .ic{width:15px;height:15px;opacity:.6}
+.sres .s-sug{grid-column:1/-1}
+.sres .s-tap{display:flex;align-items:center;gap:8px;width:100%;text-align:left;font:inherit;font-size:14px;color:var(--muted);background:#F6F3EE;border:1px dashed var(--line,#E7E2D8);padding:12px 14px;border-radius:14px;animation:none}
+.sres .s-tap .ic{width:16px;height:16px}
+.s-pop{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+#search.pre #chips{display:none}
+
+/* --- 6. Admin lists on phones: cards instead of a cut-off table --- */
+@media (max-width:640px){
+  #admin #aPT .tw{background:none;overflow:visible}
+  #admin #aPT table,#admin #aPT tbody{display:block;width:100%}
+  #admin #aPT thead{display:none}
+  #admin #aPT tr{display:grid;grid-template-columns:28px minmax(0,1fr) auto;grid-template-areas:"ck pc ed" "ck pr pr" "ck st st" "ck fl fl";gap:6px 10px;padding:14px 12px;border-bottom:1px solid var(--line,#E7E2D8)}
+  #admin #aPT td{display:block;padding:0;border:0;min-width:0}
+  #admin #aPT td:nth-child(1){grid-area:ck;padding-top:6px}
+  #admin #aPT td:nth-child(2){grid-area:pc}
+  #admin #aPT td:nth-child(3){display:none}
+  #admin #aPT td:nth-child(4){grid-area:pr;text-align:left;display:flex;gap:8px;align-items:baseline}
+  #admin #aPT td:nth-child(5){grid-area:st;text-align:left;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  #admin #aPT td:nth-child(5) small{display:inline}
+  #admin #aPT td:nth-child(6){grid-area:st;justify-self:end}
+  #admin #aPT td:nth-child(7){grid-area:fl}
+  #admin #aPT td:nth-child(8){grid-area:ed}
+  #admin #aPT .pc b{white-space:normal;line-height:1.3}
+}
